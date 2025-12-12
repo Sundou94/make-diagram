@@ -1,0 +1,172 @@
+<mxfile host="app.diagrams.net" modified="2024-05-06T00:00:00.000Z" agent="7.0" version="22.0.0" editor="diagramly" type="device">
+  <diagram id="diagram-msa" name="MSA Container Diagram">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="layer1" parent="0" />
+        <!-- Zones -->
+        <mxCell id="internet" value="Internet" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="20" y="40" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="aws" value="Cloud (AWS)" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;strokeColor=#6c8ebf;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="200" y="20" width="220" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="dmz" value="DMZ" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;strokeColor=#82b366;fillColor=#d5e8d4;" vertex="1" parent="1">
+          <mxGeometry x="450" y="40" width="180" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="intranet" value="Company Intranet" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;strokeColor=#b85450;fillColor=#f8cecc;" vertex="1" parent="1">
+          <mxGeometry x="660" y="20" width="280" height="240" as="geometry" />
+        </mxCell>
+
+        <!-- Internet actor -->
+        <mxCell id="ext" value="External Users" style="shape=ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="60" y="80" width="80" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- AWS components -->
+        <mxCell id="lb" value="Internet LB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="230" y="60" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cicd" value="CI/CD Pipeline" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="230" y="120" width="160" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- DMZ components -->
+        <mxCell id="frontend" value="FRONTEND" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="470" y="70" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway" value="GATEWAY" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="470" y="130" width="140" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Intranet platform services -->
+        <mxCell id="platform" value="Platform Services" style="swimlane;childLayout=stackLayout;rounded=1;horizontal=0;startSize=24;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="680" y="40" width="120" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="disc" value="DISCOVERY" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;" vertex="1" parent="platform">
+          <mxGeometry x="0" y="24" width="120" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="config" value="CONFIG" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;" vertex="1" parent="platform">
+          <mxGeometry x="0" y="52" width="120" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="auth" value="AUTH" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;" vertex="1" parent="platform">
+          <mxGeometry x="0" y="80" width="120" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="file" value="FILE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;" vertex="1" parent="platform">
+          <mxGeometry x="0" y="108" width="120" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="mail" value="MAIL" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;" vertex="1" parent="platform">
+          <mxGeometry x="0" y="136" width="120" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="common" value="COMMON" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;" vertex="1" parent="platform">
+          <mxGeometry x="0" y="164" width="120" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- Intranet business services -->
+        <mxCell id="business" value="Business Services" style="swimlane;childLayout=stackLayout;rounded=1;horizontal=0;startSize=24;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="820" y="40" width="100" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="core" value="CORE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;" vertex="1" parent="business">
+          <mxGeometry x="0" y="24" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="bpms" value="BPMS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;" vertex="1" parent="business">
+          <mxGeometry x="0" y="64" width="100" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Edges -->
+        <mxCell id="edge-ext-lb" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ext" target="lb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-lb-frontend" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="lb" target="frontend">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-lb-gateway" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="lb" target="gateway">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-frontend-gateway" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="frontend" target="gateway">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge-gateway-disc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gateway" target="disc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-gateway-auth" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gateway" target="auth">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-gateway-core" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gateway" target="core">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-gateway-bpms" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gateway" target="bpms">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge-disc-core" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="disc" target="core">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-disc-bpms" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="disc" target="bpms">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-config-common" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="config" target="common">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-config-core" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="config" target="core">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-config-bpms" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="config" target="bpms">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-auth-core" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="auth" target="core">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-auth-bpms" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="auth" target="bpms">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-file-core" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="file" target="core">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-mail-common" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="mail" target="common">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-common-core" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="common" target="core">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-common-bpms" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="common" target="bpms">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- CI/CD deployments -->
+        <mxCell id="edge-cicd-frontend" value="deploy" style="dashed=1;endArrow=open;edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="cicd" target="frontend">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-cicd-gateway" value="deploy" style="dashed=1;endArrow=open;edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="cicd" target="gateway">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-cicd-disc" value="deploy" style="dashed=1;endArrow=open;edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="cicd" target="disc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-cicd-config" value="deploy" style="dashed=1;endArrow=open;edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="cicd" target="config">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-cicd-auth" value="deploy" style="dashed=1;endArrow=open;edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="cicd" target="auth">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-cicd-file" value="deploy" style="dashed=1;endArrow=open;edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="cicd" target="file">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-cicd-mail" value="deploy" style="dashed=1;endArrow=open;edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="cicd" target="mail">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-cicd-common" value="deploy" style="dashed=1;endArrow=open;edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="cicd" target="common">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-cicd-core" value="deploy" style="dashed=1;endArrow=open;edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="cicd" target="core">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-cicd-bpms" value="deploy" style="dashed=1;endArrow=open;edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="cicd" target="bpms">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
